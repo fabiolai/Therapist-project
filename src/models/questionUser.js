@@ -1,8 +1,13 @@
 import mongoose from "mongoose";
 
-class Questions{
 
-    
-}
+    const QuestionsSchema = new mongoose.Schema(
+        {
+          gender: String,
+          age: String,
+        },
+        { timestamps: true }
+      );
 
-export default Questions;
+      const Questions = mongoose.model("Questions",emailSchema);
+      export default Questions;
