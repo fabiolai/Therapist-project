@@ -19,12 +19,15 @@ app.post('/',async(req,res) =>{
   const {email} = req.body;
 
   let transporter = nodemailer.createTransport({
+
     host:"smtp.gmail.com",
     port:587,
     secure:false,
     auth:{
       user:'username@gmail.com', 
       pass: 'app password',
+    
+
     }
   });
   const msg ={
