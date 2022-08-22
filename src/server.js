@@ -21,19 +21,24 @@ app.post('/sendEmail',(req,res) =>{
   console.log(email);
   console.log(`email mfite niyingiyi ${email}`);
 
-  const transporter = nodemailer.createTransport({
-    service:'gmail',
-    host: 'smtp.gmail.com',
-    port: 465,
-    secure: false,
-    auth: {
-       user: 'fabykalifa@gmail.com',
-       pass: 'lmbbtfuiutrkwcql' 
-},
-});
-//transporter.close();
+
+
     
   const mailerOption ={
+
+  let transporter = nodemailer.createTransport({
+
+    host:"smtp.gmail.com",
+    port:587,
+    secure:false,
+    auth:{
+      user:'username@gmail.com', 
+      pass: 'app password',
+    
+
+    }
+  });
+  
     from:'"the Express App" <fabykalifa@gmail.com>',
     to: `${email}`,
     subject:"sending email using nodeMailer",
