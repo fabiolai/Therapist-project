@@ -1,5 +1,5 @@
 import QuestionModel from "../models/userQuestionModel";
-import  userQuestion from "../models/userQuestionModel";
+
 
 
 class QuestionService{
@@ -11,6 +11,15 @@ class QuestionService{
          return question;
 
      }
+
+
+    //  update status
+    static async rejectApprovalQuestion(req){
+        
+     const rejectApprovalQuestion = await QuestionModel.findByIdAndUpdate(req.params.id,req.body,{new:true});
+         return rejectApprovalQuestion;
+     }
+    
 
 }
 
