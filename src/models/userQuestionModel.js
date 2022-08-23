@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 
 const questionSchema = new mongoose.Schema(
   {
+    
     gender: {
         type: String,
         enum:["male", "female", "other"],
@@ -23,6 +24,10 @@ const questionSchema = new mongoose.Schema(
     isActive: {
       type: Boolean,
       default: true,
+    },
+    therapist_decision: {
+      type: String,
+      enum:["pending", "rejected", "approved"],
     },
   },
   { timestamps: true }
